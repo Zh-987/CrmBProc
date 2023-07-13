@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Руководитель";
+    Layout = "~/Views/Shared/_Layout_employee_head.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">Заявки</h2>
+
+<section id="services" class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-certificate"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Принятые запросы", "employee_head_tab_accepted_inquiry", "Home")</h4>
+                </div>
+            </div>
+            <!-- End Col -->
+            <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-notepad"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Мои заявки", "employee_head_tab_branch_request", "Home")</h4>
+
+                </div>
+            </div>
+            <!-- End Col -->
+
+
+
+
+
+        </div>
+
+        
+        </div>
+</section>
+

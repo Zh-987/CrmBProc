@@ -1,0 +1,113 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CrmBProc.Models.Order_table>
+
+@{
+    ViewBag.Title = "Поставщики";
+    Layout = "~/Views/Shared/_Layout_supplier.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">Добро пожаловать в страницу @Session["supplier_fullname"] </h2>
+
+
+<table class="table" style="color: #151948; margin-top:4%">
+    <tr>
+        <th>
+            Дата формирования заказа
+        </th>
+        <th>
+            Заявка ID
+        </th>
+        <th>
+            Материал
+        </th>
+        <th>
+            Техническая характеристика
+        </th>
+        <th>
+            Количество
+        </th>
+        <th>
+            Дедлайн
+        </th>
+
+        <th>
+            Составил заявку руководитель
+        </th>
+        <th>
+            Из департамента
+        </th>
+        <th>
+            Составил заказ
+        </th>
+        <th>
+            Должность
+        </th>
+        <th>
+            Группа
+        </th>
+        <th>
+            Условия доставки
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.date_fix_order)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.order_FK_request)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Request_tbl.request_material)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Request_tbl.request_technical_character)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Request_tbl.request_quanitity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Request_tbl.request_deadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee_tbl.employee_fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branches_tbl.branch_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.order_send_emp)
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.order_position)
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.order_group)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.order_terms)
+            </td>
+            <td>
+                @Html.ActionLink("Принять", "supplier_order_list_confirm", new { id = item.order_id }, new { @class = "btn btn-success", @style = "font-size:10px" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div id="container" style="margin-left: 20px; color: #151948">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left:400px">
+        Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        / @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("employee_dep_post_order_list", new { page }))
+    </div>
+</div>

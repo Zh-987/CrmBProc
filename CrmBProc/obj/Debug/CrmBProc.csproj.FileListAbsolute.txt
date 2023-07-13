@@ -1,0 +1,192 @@
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\CrmBProc.dll.config
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\CrmBProc.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\CrmBProc.pdb
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\csc.exe
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\csc.exe.config
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\csc.rsp
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\csi.exe
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\csi.exe.config
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\csi.rsp
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.AppContext.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Console.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.IO.Compression.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Net.Http.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Net.Sockets.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.ValueTuple.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Xml.XPath.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\vbc.exe
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\vbc.exe.config
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\vbc.rsp
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\VBCSCompiler.exe
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\Antlr3.Runtime.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\EntityFramework.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\Newtonsoft.Json.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.Helpers.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.Mvc.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.Optimization.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.Razor.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.WebPages.Deployment.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.WebPages.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.WebPages.Razor.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\WebGrease.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\EntityFramework.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.Helpers.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.Mvc.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.Optimization.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.Razor.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.WebPages.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.WebPages.Deployment.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\System.Web.WebPages.Razor.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\Newtonsoft.Json.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\Antlr3.Runtime.pdb
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\ru\EntityFramework.resources.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\ru\System.Web.Helpers.resources.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\ru\System.Web.Mvc.resources.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\ru\System.Web.Optimization.resources.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\ru\System.Web.Razor.resources.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\ru\System.Web.WebPages.resources.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\ru\System.Web.WebPages.Deployment.resources.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\obj\Debug\CrmBProc.csproj.AssemblyReference.cache
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\obj\Debug\CrmBProc.csproj.CoreCompileInputs.cache
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\obj\Debug\CrmBProc.csproj.CopyComplete
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\obj\Debug\CrmBProc.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\obj\Debug\CrmBProc.pdb
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\EntityFramework.SqlServer.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\PagedList.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\PagedList.Mvc.dll
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\EntityFramework.SqlServer.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\PagedList.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\PagedList.Mvc.xml
+C:\Users\assai\source\repos\CrmBProc\CrmBProc\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\CrmBProc.dll.config
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\CrmBProc.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\CrmBProc.pdb
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\csc.exe
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\csc.exe.config
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\csc.rsp
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\csi.exe
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\csi.exe.config
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\csi.rsp
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.AppContext.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Console.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.IO.Compression.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Net.Http.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Net.Sockets.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.ValueTuple.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Xml.XPath.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\vbc.exe
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\vbc.exe.config
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\vbc.rsp
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\VBCSCompiler.exe
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\Antlr3.Runtime.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\EntityFramework.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\EntityFramework.SqlServer.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\Newtonsoft.Json.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\PagedList.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\PagedList.Mvc.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.Helpers.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.Mvc.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.Optimization.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.Razor.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.WebPages.Deployment.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.WebPages.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.WebPages.Razor.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\WebGrease.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\EntityFramework.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\EntityFramework.SqlServer.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\PagedList.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\PagedList.Mvc.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.Helpers.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.Mvc.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.Optimization.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.Razor.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.WebPages.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.WebPages.Deployment.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\System.Web.WebPages.Razor.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\Newtonsoft.Json.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\Antlr3.Runtime.pdb
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\ru\EntityFramework.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\ru\System.Web.Helpers.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\ru\System.Web.Mvc.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\ru\System.Web.Optimization.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\ru\System.Web.Razor.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\ru\System.Web.WebPages.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\ru\System.Web.WebPages.Deployment.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\bin\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\obj\Debug\CrmBProc.csproj.AssemblyReference.cache
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\obj\Debug\CrmBProc.csproj.CoreCompileInputs.cache
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\obj\Debug\CrmBProc.csproj.CopyComplete
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\obj\Debug\CrmBProc.dll
+C:\Users\assai\OneDrive\Рабочий стол\CrmBProc\CrmBProc\obj\Debug\CrmBProc.pdb

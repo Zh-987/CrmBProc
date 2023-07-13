@@ -1,0 +1,40 @@
+﻿@model CrmBProc.Models.Employee_tbl
+
+@{
+    ViewBag.Title = "Подробнее";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<h2 class="text-center">@ViewBag.Title </h2>
+
+
+<div class="text-center" style="margin-top: 6%; color: #151948; font-size:16px">
+    <dl class="dl-horizontal">
+
+        <dt style="text-align: left">Логин сотрудника:</dt>
+        <dd>@Model.employee_login</dd>
+        <br />
+
+        <dt style="text-align:left">Ф.И.О. сотрудника:</dt>
+        <dd>@Model.employee_fullname</dd>
+        <br />
+
+        <dt style=" text-align: left ">День рождения:</dt>
+        <dd>@Model.employee_birthday</dd>
+        <br />
+        <dt style=" text-align: left ">Сотовый номер:</dt>
+        <dd>@Model.employee_phnumber</dd>
+
+        <br />
+        
+        <dt style=" text-align: left ">Отдел:</dt>
+        <dd>@Model.Branches_tbl.branch_name</dd>
+        <br />
+        <dt style=" text-align: left ">Должность:</dt>
+        <dd>@Model.employee_position</dd>
+
+    </dl>
+</div>
+<div style="margin-top:7%">
+    @Html.ActionLink("Назад к списку", "admin_tab_employee_list")
+</div>

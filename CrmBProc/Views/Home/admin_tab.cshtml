@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Администратор";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">Добро пожаловать в страницу администратора </h2>
+
+<section id="services" class="section">
+    <div class="container">
+
+        <div class="row">
+            <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-delivery"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Поставщики", "admin_tab_supplier", "Home")</h4>
+                    
+                </div>
+            </div>
+            <!-- End Col -->
+            <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-user"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Сотрудники", "admin_tab_employee", "Home")</h4>
+
+                </div>
+            </div>
+            <!-- End Col -->
+    
+
+        </div>
+    </div>
+</section>
+

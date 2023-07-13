@@ -1,0 +1,25 @@
+﻿@model CrmBProc.Models.Inquery_tbl
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Bank of Money - Initiate Money Transfer</title>
+</head>
+<body>
+    <div>
+
+    <h1>Initiate Money Transfer</h1>
+    @using (Html.BeginForm())
+    {
+        <p>Enter payee account #: @Html.TextBox("inquery_material")</p>
+        <p>Enter payee name #: @Html.TextBox("inquery_quantity")</p>
+        <p>Enter amount #: @Html.TextBox("inquery_technical_character")</p>
+        <p>Enter amount #: @Html.TextBox("inquery_description")</p>
+        <input type="submit" value="Make Transfer" />
+    }
+    </div>
+</body>
+</html>

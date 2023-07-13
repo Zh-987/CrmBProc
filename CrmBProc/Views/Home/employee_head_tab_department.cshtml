@@ -1,0 +1,80 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CrmBProc.Models.Employee_tbl>
+
+@{
+    ViewBag.Title = "Руководитель";
+    Layout = "~/Views/Shared/_Layout_employee_head.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">Департамент</h2>
+
+<table class="table" style="color: #151948; margin-top:4%">
+    <tr>
+        <th>
+            Ф.И.О. cотрудника
+        </th>
+
+        <th>
+            логин
+        </th>
+        <th>
+            День рождения
+        </th>
+        <th>
+            Сотовый номер
+        </th>
+        <th>
+            Департамент
+        </th>
+        <th>
+            Должность
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.employee_fullname)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.employee_login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employee_birthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employee_phnumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branches_tbl.branch_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position_tbl.position_name)
+            </td>
+
+            <td>
+
+                @Html.ActionLink("Подробности", "Details_admin_employee", new { id = item.employee_id }) |
+                @Html.ActionLink("Редактировать", "Edit_admin_employee", new { id = item.employee_id }) |
+                @Html.ActionLink("Удалить", "Delete_admin_employee", new { id = item.employee_id })
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<div id="container" style="margin-left: 20px; color: #151948">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left:400px">
+        Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        / @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("employee_head_tab_department", new { page }))
+    </div>
+</div>

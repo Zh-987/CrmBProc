@@ -1,0 +1,58 @@
+﻿@model CrmBProc.Models.Position_tbl
+@{
+    ViewBag.Title = "Новая позиция";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal col-lg-12" style="color: #151948;">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group  col-lg-4">
+            @Html.LabelFor(model => model.position_name, "Новая позиция", htmlAttributes: new { @class = "control-label"})
+            <div>
+                @Html.EditorFor(model => model.position_name, new { htmlAttributes = new { @class = "form-control  col-lg-4" } })
+                @Html.ValidationMessageFor(model => model.position_name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group col-lg-4" >
+                <input type="submit" value="Сохранить" class="btn btn-info" style="margin-top:7%" />
+             </div>
+    </div>
+}
+<div class="col-lg-12" style="overflow: scroll; color: #151948; " >
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Должность</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in ViewData["list"] as List<CrmBProc.Models.Position_tbl>)
+            {
+                <tr>
+                    <td>@item.position_id</td>
+                    <td>@item.position_name </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

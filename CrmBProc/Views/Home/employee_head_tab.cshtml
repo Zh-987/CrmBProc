@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Руководитель департамента";
+    Layout = "~/Views/Shared/_Layout_employee_head.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">Добро пожаловать - @Session["employee_fullname"] !</h2>
+
+
+<section id="services" class="section">
+    <div class="container">
+
+        <div class="row">
+            <!-- Start Col -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-control-panel"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Запрос", "employee_head_tab_inquiry_menu", "Home")</h4>
+                </div>
+            </div>
+            <!-- End Col -->
+
+            <!-- Start Col -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-package"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Заявка", "employee_head_tab_request", "Home")</h4>
+
+                </div>
+            </div>
+            <!-- End Col -->
+
+            <!-- Start Col -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-apartment"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Департамент", "employee_head_tab_department", "Home")</h4>
+
+                </div>
+            </div>
+            <!-- End Col -->
+
+
+        </div>
+    </div>
+</section>

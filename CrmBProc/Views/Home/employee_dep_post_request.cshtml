@@ -1,0 +1,85 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CrmBProc.Models.Request_tbl>
+
+@{
+    ViewBag.Title = "Заявки";
+    Layout = "~/Views/Shared/_Layout_employee_dep_post.cshtml";
+}
+
+<h2 class="text-center">@ViewBag.Title </h2>
+
+<table class="table" style="color: #151948; margin-top:4%">
+    <tr>
+        <th>
+            От кого
+        </th>
+        <th>
+            Материал
+        </th>
+        <th>
+            Количество
+        </th>
+        <th>
+            Техническая характеристика
+        </th>
+        <th>
+            Дата формирования заявки
+        </th>
+        <th>
+            Дедлайн
+        </th>
+        <th>
+            От департамента
+        </th>
+        <th>
+            К департаменту
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employee_tbl.employee_fullname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.request_material)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.request_quanitity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.request_technical_character)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.request_date_fix)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.request_deadline)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Branches_tbl.branch_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Branches_tbl1.branch_name)
+    </td>
+    
+    
+    <td>
+        @Html.ActionLink("Документ", "employee_head_tab_send_request_document", new { id = item.request_id }, new { @class = "btn btn-apple" })
+    </td>
+</tr>
+    }
+
+</table>
+
+<div id="container" style="margin-left: 20px; color: #151948">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left:400px">
+        Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        / @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("employee_dep_post_request", new { page }))
+    </div>
+</div>

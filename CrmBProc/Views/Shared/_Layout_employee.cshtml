@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Поддержка эффективных бизнес процессов</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/animate.css">
+    <link rel="stylesheet" href="~/Content/LineIcons.css">
+    <link rel="stylesheet" href="~/Content/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/owl.theme.css">
+    <link rel="stylesheet" href="~/Content/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/nivo-lightbox.css">
+    <link rel="stylesheet" href="~/Content/main.css">
+    <link rel="stylesheet" href="~/Content/responsive.css">
+</head>
+<body>
+    <header id="home" class="hero-area">
+        <div class="overlay">
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+            <div class="container">
+
+                @Html.ActionLink("Выйти", "Index", "Home", new { @class = "navbar-toggler", style = "color:#5E629C" })
+                @Html.ActionLink("Профиль", "employee_tab_profile", "Home", new { @class = "navbar-toggler", style = "color:#5E629C" })
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                        <li class="nav-item">
+
+                            @Html.ActionLink("Главная", "employee_tab", "Home", new { @class = "nav-link page-scroll" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Запрос", "employee_tab_inquiry_menu", "Home", new { @class = "nav-link page-scroll" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Комментарии", "#", "Home", new { @class = "nav-link page-scroll" })
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="text-center">
+            <p style="color: #151948 ">&copy; @DateTime.Now.Year - Поддержка эффективных бизнес процессов</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

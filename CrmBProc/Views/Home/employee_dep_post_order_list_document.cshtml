@@ -1,0 +1,45 @@
+﻿@model CrmBProc.Models.Order_table
+
+@{
+    ViewBag.Title = "Заказ";
+    Layout = null;
+}
+
+
+<h3>Документ №  @Session["order_id"]</h3>
+<h2 class="text-center" style="text-align:center">@ViewBag.Title </h2>
+
+<div class="text-center" style="margin-top: 6%; color: #151948; font-size:16px">
+
+    <p><b>Ф.И.О заявителя:</b> @Session["order_name_inquiry"] <p>
+
+    <p><b>От департамента:</b> @Session["order_deparment_inquiry"]</p>
+
+    <p><b>Дата формирования заказа: </b>@Session["order_date"] </p>
+
+    <p><b>Материал:</b> @Session["order_material"]</p>
+
+    <p><b>Техническая характеристика:</b> @Session["order_technical_character"]</p>
+
+    <p><b>Количество:</b> @Session["order_quantity"]</p>
+
+    <p><b>Дедлайн: </b>@Session["order_dedline"] </p>
+
+    <p><b>Группа заказа:</b> @Session["order_group"]</p>
+    <p><b>Условия доставки:</b> @Session["order_term"]</p>
+
+    <p><b>Сотрудник делающий заказ:</b> @Session["order_send_name"]</p>
+    <p><b>Должность сотрудника:</b> @Session["order_send_name_position"]</p>
+
+
+
+
+</div>
+<br>
+<h4>Подпись Заявитель @Session["order_name_inquiry"] департамента @Session["order_deparment_inquiry"] __________</h4>
+<br>
+<h4>Подпись Сотрудника сделавщий заказ @Session["order_send_name"] должности @Session["order_send_name_position"] __________</h4>
+<br>
+<h4>Подпись Поставщика ________________ </h4>
+<br>
+<h4>Дата "___" "______" 2021 год. Город Алматы. ТОО"Эффективные бизнес решении".</h4>
