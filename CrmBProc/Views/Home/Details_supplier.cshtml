@@ -1,0 +1,32 @@
+﻿@model CrmBProc.Models.Suppliers_tbl
+
+@{
+    ViewBag.Title = "Подробнее";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<h2 class="text-center">@ViewBag.Title </h2>
+
+
+<div class="text-center" style="margin-top: 6%; color: #151948; font-size:16px">
+    <dl class="dl-horizontal">
+
+        <dt style="text-align: left">Логин поставщика:</dt>
+        <dd>@Model.supplier_login</dd>
+        <br>
+
+        <dt style="text-align:left">Ф.И.О. поставщика:</dt>
+        <dd>@Model.supplier_fullname</dd>
+        <br>
+
+        <dt style=" text-align: left ">Компания:</dt>
+        <dd>@Model.supplier_companyname</dd>
+        <br>
+        <dt style=" text-align: left ">Адрес:</dt>
+        <dd>@Model.supplier_address</dd>
+
+    </dl>
+</div>
+<div style="margin-top:7%">
+    @Html.ActionLink("Назад к списку", "admin_tab_supplier_list")
+</div>

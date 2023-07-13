@@ -1,0 +1,1413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище BPCRMModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin_tbl">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="admin_login" Type="nvarchar" MaxLength="20" />
+          <Property Name="admin_password" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Branches_tbl">
+          <Key>
+            <PropertyRef Name="branch_id" />
+          </Key>
+          <Property Name="branch_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branch_name" Type="nvarchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Employee_tbl">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employee_login" Type="nvarchar" MaxLength="50" />
+          <Property Name="employee_password" Type="nvarchar" MaxLength="50" />
+          <Property Name="employee_fullname" Type="nvarchar" MaxLength="100" />
+          <Property Name="employee_birthday" Type="datetime" />
+          <Property Name="employee_phnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="branch_FK_emp" Type="int" />
+          <Property Name="position_FK_emp" Type="int" />
+        </EntityType>
+        <EntityType Name="Inquery_status_tbl">
+          <Key>
+            <PropertyRef Name="inquery_status_id" />
+          </Key>
+          <Property Name="inquery_status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inquery_status_FK_Inquery" Type="int" />
+          <Property Name="inquery_status_FK_Status" Type="int" />
+          <Property Name="inquery_status_FK_Emp" Type="int" />
+          <Property Name="inquery_status_FK_Branch" Type="int" />
+        </EntityType>
+        <EntityType Name="Inquery_tbl">
+          <Key>
+            <PropertyRef Name="inquery_id" />
+          </Key>
+          <Property Name="inquery_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inquery_FK_emp" Type="int" />
+          <Property Name="inquery_date" Type="datetime" />
+          <Property Name="inquery_material" Type="nvarchar" MaxLength="100" />
+          <Property Name="inquery_technical_character" Type="nvarchar" MaxLength="150" />
+          <Property Name="inquery_quantity" Type="int" />
+          <Property Name="inquery_deadline" Type="datetime" />
+          <Property Name="inquery_FK_head" Type="int" />
+          <Property Name="inquery_description" Type="nvarchar" MaxLength="600" />
+          <Property Name="inquery_FK_branch" Type="int" />
+          <Property Name="inquery_FK_status" Type="int" />
+        </EntityType>
+        <EntityType Name="Order_status_tbl">
+          <Key>
+            <PropertyRef Name="order_status_id" />
+          </Key>
+          <Property Name="order_status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_status_FK_Status" Type="int" />
+          <Property Name="order_status_FK_Supplier" Type="int" />
+          <Property Name="order_status_FK_Order" Type="int" />
+          <Property Name="order_status_name" Type="int" />
+          <Property Name="order_status_request" Type="int" />
+          <Property Name="order_status_branch" Type="int" />
+        </EntityType>
+        <EntityType Name="Order_table">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_group" Type="nvarchar" MaxLength="100" />
+          <Property Name="order_terms" Type="nvarchar" MaxLength="100" />
+          <Property Name="order_FK_request" Type="int" />
+          <Property Name="order_FK_branch" Type="int" />
+          <Property Name="order_FK_emp" Type="int" />
+          <Property Name="order_send_emp" Type="nvarchar" MaxLength="100" />
+          <Property Name="date_fix_order" Type="datetime" />
+          <Property Name="order_position" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Position_tbl">
+          <Key>
+            <PropertyRef Name="position_id" />
+          </Key>
+          <Property Name="position_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="position_name" Type="nvarchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Request_tbl">
+          <Key>
+            <PropertyRef Name="request_id" />
+          </Key>
+          <Property Name="request_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="request_FK_emp_head" Type="int" />
+          <Property Name="request_material" Type="nvarchar" MaxLength="100" />
+          <Property Name="request_quanitity" Type="int" />
+          <Property Name="request_technical_character" Type="nvarchar" MaxLength="200" />
+          <Property Name="request_date_fix" Type="datetime" />
+          <Property Name="request_deadline" Type="datetime" />
+          <Property Name="request_FK_branch" Type="int" />
+          <Property Name="request_FK_inquery" Type="int" />
+          <Property Name="request_FK_branch_send" Type="int" />
+        </EntityType>
+        <EntityType Name="Status_tbl">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="status_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Suppliers_tbl">
+          <Key>
+            <PropertyRef Name="supplier_id" />
+          </Key>
+          <Property Name="supplier_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="supplier_login" Type="nvarchar" MaxLength="50" />
+          <Property Name="supplier_password" Type="nvarchar" MaxLength="50" />
+          <Property Name="supplier_fullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="supplier_companyname" Type="nvarchar" MaxLength="100" />
+          <Property Name="supplier_address" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Warehouse_status_tbl">
+          <Key>
+            <PropertyRef Name="Warehouse_status_id" />
+          </Key>
+          <Property Name="Warehouse_status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Warehouse_status_name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Warehouse_sup_tbl">
+          <Key>
+            <PropertyRef Name="warehouse_sup_id" />
+          </Key>
+          <Property Name="warehouse_sup_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="warehouse_FK_status" Type="int" />
+          <Property Name="warehouse_FK_order_status" Type="int" />
+          <Property Name="warehouse_FK_order" Type="int" />
+          <Property Name="warehouse_FK_emp" Type="int" />
+        </EntityType>
+        <Association Name="FK__Employee___branc__33D4B598">
+          <End Role="Branches_tbl" Type="Self.Branches_tbl" Multiplicity="0..1" />
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Employee_tbl">
+              <PropertyRef Name="branch_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee___posit__3A81B327">
+          <End Role="Position_tbl" Type="Self.Position_tbl" Multiplicity="0..1" />
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position_tbl">
+              <PropertyRef Name="position_id" />
+            </Principal>
+            <Dependent Role="Employee_tbl">
+              <PropertyRef Name="position_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_s__inque__4CA06362">
+          <End Role="Inquery_tbl" Type="Self.Inquery_tbl" Multiplicity="0..1" />
+          <End Role="Inquery_status_tbl" Type="Self.Inquery_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inquery_tbl">
+              <PropertyRef Name="inquery_id" />
+            </Principal>
+            <Dependent Role="Inquery_status_tbl">
+              <PropertyRef Name="inquery_status_FK_Inquery" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_s__inque__4D94879B">
+          <End Role="Status_tbl" Type="Self.Status_tbl" Multiplicity="0..1" />
+          <End Role="Inquery_status_tbl" Type="Self.Inquery_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_tbl">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="Inquery_status_tbl">
+              <PropertyRef Name="inquery_status_FK_Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_s__inque__4E88ABD4">
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="0..1" />
+          <End Role="Inquery_status_tbl" Type="Self.Inquery_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Inquery_status_tbl">
+              <PropertyRef Name="inquery_status_FK_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_s__inque__5070F446">
+          <End Role="Branches_tbl" Type="Self.Branches_tbl" Multiplicity="0..1" />
+          <End Role="Inquery_status_tbl" Type="Self.Inquery_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Inquery_status_tbl">
+              <PropertyRef Name="inquery_status_FK_Branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_t__inque__36B12243">
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="0..1" />
+          <End Role="Inquery_tbl" Type="Self.Inquery_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Inquery_tbl">
+              <PropertyRef Name="inquery_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_t__inque__37A5467C">
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="0..1" />
+          <End Role="Inquery_tbl" Type="Self.Inquery_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Inquery_tbl">
+              <PropertyRef Name="inquery_FK_head" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_t__inque__3C69FB99">
+          <End Role="Branches_tbl" Type="Self.Branches_tbl" Multiplicity="0..1" />
+          <End Role="Inquery_tbl" Type="Self.Inquery_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Inquery_tbl">
+              <PropertyRef Name="inquery_FK_branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_t__inque__49C3F6B7">
+          <End Role="Status_tbl" Type="Self.Status_tbl" Multiplicity="0..1" />
+          <End Role="Inquery_tbl" Type="Self.Inquery_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_tbl">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="Inquery_tbl">
+              <PropertyRef Name="inquery_FK_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__5FB337D6">
+          <End Role="Status_tbl" Type="Self.Status_tbl" Multiplicity="0..1" />
+          <End Role="Order_status_tbl" Type="Self.Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_tbl">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_FK_Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__60A75C0F">
+          <End Role="Suppliers_tbl" Type="Self.Suppliers_tbl" Multiplicity="0..1" />
+          <End Role="Order_status_tbl" Type="Self.Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers_tbl">
+              <PropertyRef Name="supplier_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_FK_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__619B8048">
+          <End Role="Order_table" Type="Self.Order_table" Multiplicity="0..1" />
+          <End Role="Order_status_tbl" Type="Self.Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_table">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_FK_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__6A30C649">
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="0..1" />
+          <End Role="Order_status_tbl" Type="Self.Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__6B24EA82">
+          <End Role="Request_tbl" Type="Self.Request_tbl" Multiplicity="0..1" />
+          <End Role="Order_status_tbl" Type="Self.Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request_tbl">
+              <PropertyRef Name="request_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__6C190EBB">
+          <End Role="Branches_tbl" Type="Self.Branches_tbl" Multiplicity="0..1" />
+          <End Role="Order_status_tbl" Type="Self.Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_tab__order__59FA5E80">
+          <End Role="Request_tbl" Type="Self.Request_tbl" Multiplicity="0..1" />
+          <End Role="Order_table" Type="Self.Order_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request_tbl">
+              <PropertyRef Name="request_id" />
+            </Principal>
+            <Dependent Role="Order_table">
+              <PropertyRef Name="order_FK_request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_tab__order__5BE2A6F2">
+          <End Role="Branches_tbl" Type="Self.Branches_tbl" Multiplicity="0..1" />
+          <End Role="Order_table" Type="Self.Order_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Order_table">
+              <PropertyRef Name="order_FK_branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_tab__order__5CD6CB2B">
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="0..1" />
+          <End Role="Order_table" Type="Self.Order_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Order_table">
+              <PropertyRef Name="order_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request_t__reque__534D60F1">
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="0..1" />
+          <End Role="Request_tbl" Type="Self.Request_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Request_tbl">
+              <PropertyRef Name="request_FK_emp_head" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request_t__reque__5535A963">
+          <End Role="Branches_tbl" Type="Self.Branches_tbl" Multiplicity="0..1" />
+          <End Role="Request_tbl" Type="Self.Request_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Request_tbl">
+              <PropertyRef Name="request_FK_branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request_t__reque__5629CD9C">
+          <End Role="Inquery_tbl" Type="Self.Inquery_tbl" Multiplicity="0..1" />
+          <End Role="Request_tbl" Type="Self.Request_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inquery_tbl">
+              <PropertyRef Name="inquery_id" />
+            </Principal>
+            <Dependent Role="Request_tbl">
+              <PropertyRef Name="request_FK_inquery" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request_t__reque__571DF1D5">
+          <End Role="Branches_tbl" Type="Self.Branches_tbl" Multiplicity="0..1" />
+          <End Role="Request_tbl" Type="Self.Request_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Request_tbl">
+              <PropertyRef Name="request_FK_branch_send" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__wareh__66603565">
+          <End Role="Warehouse_status_tbl" Type="Self.Warehouse_status_tbl" Multiplicity="0..1" />
+          <End Role="Warehouse_sup_tbl" Type="Self.Warehouse_sup_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse_status_tbl">
+              <PropertyRef Name="Warehouse_status_id" />
+            </Principal>
+            <Dependent Role="Warehouse_sup_tbl">
+              <PropertyRef Name="warehouse_FK_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__wareh__6754599E">
+          <End Role="Order_status_tbl" Type="Self.Order_status_tbl" Multiplicity="0..1" />
+          <End Role="Warehouse_sup_tbl" Type="Self.Warehouse_sup_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_status_tbl">
+              <PropertyRef Name="order_status_id" />
+            </Principal>
+            <Dependent Role="Warehouse_sup_tbl">
+              <PropertyRef Name="warehouse_FK_order_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__wareh__68487DD7">
+          <End Role="Order_table" Type="Self.Order_table" Multiplicity="0..1" />
+          <End Role="Warehouse_sup_tbl" Type="Self.Warehouse_sup_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_table">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Warehouse_sup_tbl">
+              <PropertyRef Name="warehouse_FK_order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__wareh__693CA210">
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="0..1" />
+          <End Role="Warehouse_sup_tbl" Type="Self.Warehouse_sup_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Warehouse_sup_tbl">
+              <PropertyRef Name="warehouse_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище BPCRMModelContainer">
+          <EntitySet Name="Admin_tbl" EntityType="Self.Admin_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Branches_tbl" EntityType="Self.Branches_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_tbl" EntityType="Self.Employee_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inquery_status_tbl" EntityType="Self.Inquery_status_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inquery_tbl" EntityType="Self.Inquery_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_status_tbl" EntityType="Self.Order_status_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_table" EntityType="Self.Order_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position_tbl" EntityType="Self.Position_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request_tbl" EntityType="Self.Request_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status_tbl" EntityType="Self.Status_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suppliers_tbl" EntityType="Self.Suppliers_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Warehouse_status_tbl" EntityType="Self.Warehouse_status_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Warehouse_sup_tbl" EntityType="Self.Warehouse_sup_tbl" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Employee___branc__33D4B598" Association="Self.FK__Employee___branc__33D4B598">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee___posit__3A81B327" Association="Self.FK__Employee___posit__3A81B327">
+            <End Role="Position_tbl" EntitySet="Position_tbl" />
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_s__inque__4CA06362" Association="Self.FK__Inquery_s__inque__4CA06362">
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+            <End Role="Inquery_status_tbl" EntitySet="Inquery_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_s__inque__4D94879B" Association="Self.FK__Inquery_s__inque__4D94879B">
+            <End Role="Status_tbl" EntitySet="Status_tbl" />
+            <End Role="Inquery_status_tbl" EntitySet="Inquery_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_s__inque__4E88ABD4" Association="Self.FK__Inquery_s__inque__4E88ABD4">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Inquery_status_tbl" EntitySet="Inquery_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_s__inque__5070F446" Association="Self.FK__Inquery_s__inque__5070F446">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Inquery_status_tbl" EntitySet="Inquery_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_t__inque__36B12243" Association="Self.FK__Inquery_t__inque__36B12243">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_t__inque__37A5467C" Association="Self.FK__Inquery_t__inque__37A5467C">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_t__inque__3C69FB99" Association="Self.FK__Inquery_t__inque__3C69FB99">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_t__inque__49C3F6B7" Association="Self.FK__Inquery_t__inque__49C3F6B7">
+            <End Role="Status_tbl" EntitySet="Status_tbl" />
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__5FB337D6" Association="Self.FK__Order_sta__order__5FB337D6">
+            <End Role="Status_tbl" EntitySet="Status_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__60A75C0F" Association="Self.FK__Order_sta__order__60A75C0F">
+            <End Role="Suppliers_tbl" EntitySet="Suppliers_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__619B8048" Association="Self.FK__Order_sta__order__619B8048">
+            <End Role="Order_table" EntitySet="Order_table" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__6A30C649" Association="Self.FK__Order_sta__order__6A30C649">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__6B24EA82" Association="Self.FK__Order_sta__order__6B24EA82">
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__6C190EBB" Association="Self.FK__Order_sta__order__6C190EBB">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_tab__order__59FA5E80" Association="Self.FK__Order_tab__order__59FA5E80">
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+            <End Role="Order_table" EntitySet="Order_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_tab__order__5BE2A6F2" Association="Self.FK__Order_tab__order__5BE2A6F2">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Order_table" EntitySet="Order_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_tab__order__5CD6CB2B" Association="Self.FK__Order_tab__order__5CD6CB2B">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Order_table" EntitySet="Order_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request_t__reque__534D60F1" Association="Self.FK__Request_t__reque__534D60F1">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request_t__reque__5535A963" Association="Self.FK__Request_t__reque__5535A963">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request_t__reque__5629CD9C" Association="Self.FK__Request_t__reque__5629CD9C">
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request_t__reque__571DF1D5" Association="Self.FK__Request_t__reque__571DF1D5">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__wareh__66603565" Association="Self.FK__Warehouse__wareh__66603565">
+            <End Role="Warehouse_status_tbl" EntitySet="Warehouse_status_tbl" />
+            <End Role="Warehouse_sup_tbl" EntitySet="Warehouse_sup_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__wareh__6754599E" Association="Self.FK__Warehouse__wareh__6754599E">
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+            <End Role="Warehouse_sup_tbl" EntitySet="Warehouse_sup_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__wareh__68487DD7" Association="Self.FK__Warehouse__wareh__68487DD7">
+            <End Role="Order_table" EntitySet="Order_table" />
+            <End Role="Warehouse_sup_tbl" EntitySet="Warehouse_sup_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__wareh__693CA210" Association="Self.FK__Warehouse__wareh__693CA210">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Warehouse_sup_tbl" EntitySet="Warehouse_sup_tbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BPCRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin_tbl">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="admin_login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="admin_password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee_tbl">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employee_login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="employee_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="employee_fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="employee_birthday" Type="DateTime" Precision="3" />
+          <Property Name="employee_phnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="branch_FK_emp" Type="Int32" />
+          <NavigationProperty Name="Branches_tbl" Relationship="BPCRMModel.FK__Employee___branc__33D4B598" FromRole="Employee_tbl" ToRole="Branches_tbl" />
+          <NavigationProperty Name="Inquery_tbl" Relationship="BPCRMModel.FK__Inquery_t__inque__36B12243" FromRole="Employee_tbl" ToRole="Inquery_tbl" />
+          <NavigationProperty Name="Inquery_tbl1" Relationship="BPCRMModel.FK__Inquery_t__inque__37A5467C" FromRole="Employee_tbl" ToRole="Inquery_tbl" />
+          <Property Name="position_FK_emp" Type="Int32" />
+          <NavigationProperty Name="Position_tbl" Relationship="BPCRMModel.FK__Employee___posit__3A81B327" FromRole="Employee_tbl" ToRole="Position_tbl" />
+          <NavigationProperty Name="Inquery_status_tbl" Relationship="BPCRMModel.FK__Inquery_s__inque__4E88ABD4" FromRole="Employee_tbl" ToRole="Inquery_status_tbl" />
+          <NavigationProperty Name="Request_tbl" Relationship="BPCRMModel.FK__Request_t__reque__534D60F1" FromRole="Employee_tbl" ToRole="Request_tbl" />
+          <NavigationProperty Name="Order_table" Relationship="BPCRMModel.FK__Order_tab__order__5CD6CB2B" FromRole="Employee_tbl" ToRole="Order_table" />
+          <NavigationProperty Name="Warehouse_sup_tbl" Relationship="BPCRMModel.FK__Warehouse__wareh__693CA210" FromRole="Employee_tbl" ToRole="Warehouse_sup_tbl" />
+          <NavigationProperty Name="Order_status_tbl" Relationship="BPCRMModel.FK__Order_sta__order__6A30C649" FromRole="Employee_tbl" ToRole="Order_status_tbl" />
+        </EntityType>
+        <EntityType Name="Suppliers_tbl">
+          <Key>
+            <PropertyRef Name="supplier_id" />
+          </Key>
+          <Property Name="supplier_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="supplier_login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="supplier_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="supplier_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="supplier_companyname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="supplier_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Order_status_tbl" Relationship="BPCRMModel.FK__Order_sta__order__60A75C0F" FromRole="Suppliers_tbl" ToRole="Order_status_tbl" />
+        </EntityType>
+        <EntityContainer Name="BPCRMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin_tbl" EntityType="Self.Admin_tbl" />
+          <EntitySet Name="Employee_tbl" EntityType="Self.Employee_tbl" />
+          <EntitySet Name="Suppliers_tbl" EntityType="Self.Suppliers_tbl" />
+          <EntitySet Name="Branches_tbl" EntityType="BPCRMModel.Branches_tbl" />
+          <AssociationSet Name="FK__Employee___branc__33D4B598" Association="BPCRMModel.FK__Employee___branc__33D4B598">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+          </AssociationSet>
+          <EntitySet Name="Inquery_tbl" EntityType="BPCRMModel.Inquery_tbl" />
+          <AssociationSet Name="FK__Inquery_t__inque__36B12243" Association="BPCRMModel.FK__Inquery_t__inque__36B12243">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_t__inque__37A5467C" Association="BPCRMModel.FK__Inquery_t__inque__37A5467C">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+          </AssociationSet>
+          <EntitySet Name="Position_tbl" EntityType="BPCRMModel.Position_tbl" />
+          <AssociationSet Name="FK__Employee___posit__3A81B327" Association="BPCRMModel.FK__Employee___posit__3A81B327">
+            <End Role="Position_tbl" EntitySet="Position_tbl" />
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_t__inque__3C69FB99" Association="BPCRMModel.FK__Inquery_t__inque__3C69FB99">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+          </AssociationSet>
+          <EntitySet Name="Status_tbl" EntityType="BPCRMModel.Status_tbl" />
+          <AssociationSet Name="FK__Inquery_t__inque__49C3F6B7" Association="BPCRMModel.FK__Inquery_t__inque__49C3F6B7">
+            <End Role="Status_tbl" EntitySet="Status_tbl" />
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+          </AssociationSet>
+          <EntitySet Name="Inquery_status_tbl" EntityType="BPCRMModel.Inquery_status_tbl" />
+          <AssociationSet Name="FK__Inquery_s__inque__4CA06362" Association="BPCRMModel.FK__Inquery_s__inque__4CA06362">
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+            <End Role="Inquery_status_tbl" EntitySet="Inquery_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_s__inque__4D94879B" Association="BPCRMModel.FK__Inquery_s__inque__4D94879B">
+            <End Role="Status_tbl" EntitySet="Status_tbl" />
+            <End Role="Inquery_status_tbl" EntitySet="Inquery_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_s__inque__4E88ABD4" Association="BPCRMModel.FK__Inquery_s__inque__4E88ABD4">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Inquery_status_tbl" EntitySet="Inquery_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Inquery_s__inque__5070F446" Association="BPCRMModel.FK__Inquery_s__inque__5070F446">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Inquery_status_tbl" EntitySet="Inquery_status_tbl" />
+          </AssociationSet>
+          <EntitySet Name="Request_tbl" EntityType="BPCRMModel.Request_tbl" />
+          <AssociationSet Name="FK__Request_t__reque__534D60F1" Association="BPCRMModel.FK__Request_t__reque__534D60F1">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request_t__reque__5535A963" Association="BPCRMModel.FK__Request_t__reque__5535A963">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request_t__reque__5629CD9C" Association="BPCRMModel.FK__Request_t__reque__5629CD9C">
+            <End Role="Inquery_tbl" EntitySet="Inquery_tbl" />
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request_t__reque__571DF1D5" Association="BPCRMModel.FK__Request_t__reque__571DF1D5">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+          </AssociationSet>
+          <EntitySet Name="Order_table" EntityType="BPCRMModel.Order_table" />
+          <AssociationSet Name="FK__Order_tab__order__59FA5E80" Association="BPCRMModel.FK__Order_tab__order__59FA5E80">
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+            <End Role="Order_table" EntitySet="Order_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_tab__order__5BE2A6F2" Association="BPCRMModel.FK__Order_tab__order__5BE2A6F2">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Order_table" EntitySet="Order_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_tab__order__5CD6CB2B" Association="BPCRMModel.FK__Order_tab__order__5CD6CB2B">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Order_table" EntitySet="Order_table" />
+          </AssociationSet>
+          <EntitySet Name="Order_status_tbl" EntityType="BPCRMModel.Order_status_tbl" />
+          <AssociationSet Name="FK__Order_sta__order__5FB337D6" Association="BPCRMModel.FK__Order_sta__order__5FB337D6">
+            <End Role="Status_tbl" EntitySet="Status_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__60A75C0F" Association="BPCRMModel.FK__Order_sta__order__60A75C0F">
+            <End Role="Suppliers_tbl" EntitySet="Suppliers_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__619B8048" Association="BPCRMModel.FK__Order_sta__order__619B8048">
+            <End Role="Order_table" EntitySet="Order_table" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <EntitySet Name="Warehouse_status_tbl" EntityType="BPCRMModel.Warehouse_status_tbl" />
+          <EntitySet Name="Warehouse_sup_tbl" EntityType="BPCRMModel.Warehouse_sup_tbl" />
+          <AssociationSet Name="FK__Warehouse__wareh__693CA210" Association="BPCRMModel.FK__Warehouse__wareh__693CA210">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Warehouse_sup_tbl" EntitySet="Warehouse_sup_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__wareh__6754599E" Association="BPCRMModel.FK__Warehouse__wareh__6754599E">
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+            <End Role="Warehouse_sup_tbl" EntitySet="Warehouse_sup_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__wareh__68487DD7" Association="BPCRMModel.FK__Warehouse__wareh__68487DD7">
+            <End Role="Order_table" EntitySet="Order_table" />
+            <End Role="Warehouse_sup_tbl" EntitySet="Warehouse_sup_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__wareh__66603565" Association="BPCRMModel.FK__Warehouse__wareh__66603565">
+            <End Role="Warehouse_status_tbl" EntitySet="Warehouse_status_tbl" />
+            <End Role="Warehouse_sup_tbl" EntitySet="Warehouse_sup_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__6A30C649" Association="BPCRMModel.FK__Order_sta__order__6A30C649">
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__6B24EA82" Association="BPCRMModel.FK__Order_sta__order__6B24EA82">
+            <End Role="Request_tbl" EntitySet="Request_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_sta__order__6C190EBB" Association="BPCRMModel.FK__Order_sta__order__6C190EBB">
+            <End Role="Branches_tbl" EntitySet="Branches_tbl" />
+            <End Role="Order_status_tbl" EntitySet="Order_status_tbl" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Branches_tbl">
+          <Key>
+            <PropertyRef Name="branch_id" />
+          </Key>
+          <Property Name="branch_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branch_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee_tbl" Relationship="BPCRMModel.FK__Employee___branc__33D4B598" FromRole="Branches_tbl" ToRole="Employee_tbl" />
+          <NavigationProperty Name="Inquery_tbl" Relationship="BPCRMModel.FK__Inquery_t__inque__3C69FB99" FromRole="Branches_tbl" ToRole="Inquery_tbl" />
+          <NavigationProperty Name="Inquery_status_tbl" Relationship="BPCRMModel.FK__Inquery_s__inque__5070F446" FromRole="Branches_tbl" ToRole="Inquery_status_tbl" />
+          <NavigationProperty Name="Request_tbl" Relationship="BPCRMModel.FK__Request_t__reque__5535A963" FromRole="Branches_tbl" ToRole="Request_tbl" />
+          <NavigationProperty Name="Request_tbl1" Relationship="BPCRMModel.FK__Request_t__reque__571DF1D5" FromRole="Branches_tbl" ToRole="Request_tbl" />
+          <NavigationProperty Name="Order_table" Relationship="BPCRMModel.FK__Order_tab__order__5BE2A6F2" FromRole="Branches_tbl" ToRole="Order_table" />
+          <NavigationProperty Name="Order_status_tbl" Relationship="BPCRMModel.FK__Order_sta__order__6C190EBB" FromRole="Branches_tbl" ToRole="Order_status_tbl" />
+        </EntityType>
+        <Association Name="FK__Employee___branc__33D4B598">
+          <End Type="BPCRMModel.Branches_tbl" Role="Branches_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Employee_tbl" Role="Employee_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Employee_tbl">
+              <PropertyRef Name="branch_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Inquery_tbl">
+          <Key>
+            <PropertyRef Name="inquery_id" />
+          </Key>
+          <Property Name="inquery_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inquery_FK_emp" Type="Int32" />
+          <Property Name="inquery_date" Type="DateTime" Precision="3" />
+          <Property Name="inquery_material" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="inquery_technical_character" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="inquery_quantity" Type="Int32" />
+          <Property Name="inquery_deadline" Type="DateTime" Precision="3" />
+          <Property Name="inquery_FK_head" Type="Int32" />
+          <Property Name="inquery_description" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee_tbl" Relationship="BPCRMModel.FK__Inquery_t__inque__36B12243" FromRole="Inquery_tbl" ToRole="Employee_tbl" />
+          <NavigationProperty Name="Employee_tbl1" Relationship="BPCRMModel.FK__Inquery_t__inque__37A5467C" FromRole="Inquery_tbl" ToRole="Employee_tbl" />
+          <Property Name="inquery_FK_branch" Type="Int32" />
+          <NavigationProperty Name="Branches_tbl" Relationship="BPCRMModel.FK__Inquery_t__inque__3C69FB99" FromRole="Inquery_tbl" ToRole="Branches_tbl" />
+          <Property Name="inquery_FK_status" Type="Int32" />
+          <NavigationProperty Name="Status_tbl" Relationship="BPCRMModel.FK__Inquery_t__inque__49C3F6B7" FromRole="Inquery_tbl" ToRole="Status_tbl" />
+          <NavigationProperty Name="Inquery_status_tbl" Relationship="BPCRMModel.FK__Inquery_s__inque__4CA06362" FromRole="Inquery_tbl" ToRole="Inquery_status_tbl" />
+          <NavigationProperty Name="Request_tbl" Relationship="BPCRMModel.FK__Request_t__reque__5629CD9C" FromRole="Inquery_tbl" ToRole="Request_tbl" />
+        </EntityType>
+        <Association Name="FK__Inquery_t__inque__36B12243">
+          <End Type="BPCRMModel.Employee_tbl" Role="Employee_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Inquery_tbl" Role="Inquery_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Inquery_tbl">
+              <PropertyRef Name="inquery_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_t__inque__37A5467C">
+          <End Type="BPCRMModel.Employee_tbl" Role="Employee_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Inquery_tbl" Role="Inquery_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Inquery_tbl">
+              <PropertyRef Name="inquery_FK_head" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Position_tbl">
+          <Key>
+            <PropertyRef Name="position_id" />
+          </Key>
+          <Property Name="position_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="position_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee_tbl" Relationship="BPCRMModel.FK__Employee___posit__3A81B327" FromRole="Position_tbl" ToRole="Employee_tbl" />
+        </EntityType>
+        <Association Name="FK__Employee___posit__3A81B327">
+          <End Type="BPCRMModel.Position_tbl" Role="Position_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Employee_tbl" Role="Employee_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position_tbl">
+              <PropertyRef Name="position_id" />
+            </Principal>
+            <Dependent Role="Employee_tbl">
+              <PropertyRef Name="position_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_t__inque__3C69FB99">
+          <End Type="BPCRMModel.Branches_tbl" Role="Branches_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Inquery_tbl" Role="Inquery_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Inquery_tbl">
+              <PropertyRef Name="inquery_FK_branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Status_tbl">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="status_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Inquery_tbl" Relationship="BPCRMModel.FK__Inquery_t__inque__49C3F6B7" FromRole="Status_tbl" ToRole="Inquery_tbl" />
+          <NavigationProperty Name="Inquery_status_tbl" Relationship="BPCRMModel.FK__Inquery_s__inque__4D94879B" FromRole="Status_tbl" ToRole="Inquery_status_tbl" />
+          <NavigationProperty Name="Order_status_tbl" Relationship="BPCRMModel.FK__Order_sta__order__5FB337D6" FromRole="Status_tbl" ToRole="Order_status_tbl" />
+        </EntityType>
+        <Association Name="FK__Inquery_t__inque__49C3F6B7">
+          <End Type="BPCRMModel.Status_tbl" Role="Status_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Inquery_tbl" Role="Inquery_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_tbl">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="Inquery_tbl">
+              <PropertyRef Name="inquery_FK_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Inquery_status_tbl">
+          <Key>
+            <PropertyRef Name="inquery_status_id" />
+          </Key>
+          <Property Name="inquery_status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inquery_status_FK_Inquery" Type="Int32" />
+          <Property Name="inquery_status_FK_Status" Type="Int32" />
+          <NavigationProperty Name="Inquery_tbl" Relationship="BPCRMModel.FK__Inquery_s__inque__4CA06362" FromRole="Inquery_status_tbl" ToRole="Inquery_tbl" />
+          <NavigationProperty Name="Status_tbl" Relationship="BPCRMModel.FK__Inquery_s__inque__4D94879B" FromRole="Inquery_status_tbl" ToRole="Status_tbl" />
+          <Property Name="inquery_status_FK_Emp" Type="Int32" />
+          <NavigationProperty Name="Employee_tbl" Relationship="BPCRMModel.FK__Inquery_s__inque__4E88ABD4" FromRole="Inquery_status_tbl" ToRole="Employee_tbl" />
+          <Property Name="inquery_status_FK_Branch" Type="Int32" />
+          <NavigationProperty Name="Branches_tbl" Relationship="BPCRMModel.FK__Inquery_s__inque__5070F446" FromRole="Inquery_status_tbl" ToRole="Branches_tbl" />
+        </EntityType>
+        <Association Name="FK__Inquery_s__inque__4CA06362">
+          <End Type="BPCRMModel.Inquery_tbl" Role="Inquery_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Inquery_status_tbl" Role="Inquery_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inquery_tbl">
+              <PropertyRef Name="inquery_id" />
+            </Principal>
+            <Dependent Role="Inquery_status_tbl">
+              <PropertyRef Name="inquery_status_FK_Inquery" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_s__inque__4D94879B">
+          <End Type="BPCRMModel.Status_tbl" Role="Status_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Inquery_status_tbl" Role="Inquery_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_tbl">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="Inquery_status_tbl">
+              <PropertyRef Name="inquery_status_FK_Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_s__inque__4E88ABD4">
+          <End Type="BPCRMModel.Employee_tbl" Role="Employee_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Inquery_status_tbl" Role="Inquery_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Inquery_status_tbl">
+              <PropertyRef Name="inquery_status_FK_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Inquery_s__inque__5070F446">
+          <End Type="BPCRMModel.Branches_tbl" Role="Branches_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Inquery_status_tbl" Role="Inquery_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Inquery_status_tbl">
+              <PropertyRef Name="inquery_status_FK_Branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Request_tbl">
+          <Key>
+            <PropertyRef Name="request_id" />
+          </Key>
+          <Property Name="request_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="request_FK_emp_head" Type="Int32" />
+          <Property Name="request_material" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="request_quanitity" Type="Int32" />
+          <Property Name="request_technical_character" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="request_date_fix" Type="DateTime" Precision="3" />
+          <Property Name="request_deadline" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Employee_tbl" Relationship="BPCRMModel.FK__Request_t__reque__534D60F1" FromRole="Request_tbl" ToRole="Employee_tbl" />
+          <Property Name="request_FK_branch" Type="Int32" />
+          <NavigationProperty Name="Branches_tbl" Relationship="BPCRMModel.FK__Request_t__reque__5535A963" FromRole="Request_tbl" ToRole="Branches_tbl" />
+          <Property Name="request_FK_inquery" Type="Int32" />
+          <NavigationProperty Name="Inquery_tbl" Relationship="BPCRMModel.FK__Request_t__reque__5629CD9C" FromRole="Request_tbl" ToRole="Inquery_tbl" />
+          <Property Name="request_FK_branch_send" Type="Int32" />
+          <NavigationProperty Name="Branches_tbl1" Relationship="BPCRMModel.FK__Request_t__reque__571DF1D5" FromRole="Request_tbl" ToRole="Branches_tbl" />
+          <NavigationProperty Name="Order_table" Relationship="BPCRMModel.FK__Order_tab__order__59FA5E80" FromRole="Request_tbl" ToRole="Order_table" />
+          <NavigationProperty Name="Order_status_tbl" Relationship="BPCRMModel.FK__Order_sta__order__6B24EA82" FromRole="Request_tbl" ToRole="Order_status_tbl" />
+        </EntityType>
+        <Association Name="FK__Request_t__reque__534D60F1">
+          <End Type="BPCRMModel.Employee_tbl" Role="Employee_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Request_tbl" Role="Request_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Request_tbl">
+              <PropertyRef Name="request_FK_emp_head" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request_t__reque__5535A963">
+          <End Type="BPCRMModel.Branches_tbl" Role="Branches_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Request_tbl" Role="Request_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Request_tbl">
+              <PropertyRef Name="request_FK_branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request_t__reque__5629CD9C">
+          <End Type="BPCRMModel.Inquery_tbl" Role="Inquery_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Request_tbl" Role="Request_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inquery_tbl">
+              <PropertyRef Name="inquery_id" />
+            </Principal>
+            <Dependent Role="Request_tbl">
+              <PropertyRef Name="request_FK_inquery" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request_t__reque__571DF1D5">
+          <End Type="BPCRMModel.Branches_tbl" Role="Branches_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Request_tbl" Role="Request_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Request_tbl">
+              <PropertyRef Name="request_FK_branch_send" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Order_table">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_group" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="order_terms" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="order_FK_request" Type="Int32" />
+          <NavigationProperty Name="Request_tbl" Relationship="BPCRMModel.FK__Order_tab__order__59FA5E80" FromRole="Order_table" ToRole="Request_tbl" />
+          <Property Name="order_FK_branch" Type="Int32" />
+          <Property Name="order_FK_emp" Type="Int32" />
+          <NavigationProperty Name="Branches_tbl" Relationship="BPCRMModel.FK__Order_tab__order__5BE2A6F2" FromRole="Order_table" ToRole="Branches_tbl" />
+          <NavigationProperty Name="Employee_tbl" Relationship="BPCRMModel.FK__Order_tab__order__5CD6CB2B" FromRole="Order_table" ToRole="Employee_tbl" />
+          <Property Name="order_send_emp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="date_fix_order" Type="DateTime" Precision="3" />
+          <Property Name="order_position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Order_status_tbl" Relationship="BPCRMModel.FK__Order_sta__order__619B8048" FromRole="Order_table" ToRole="Order_status_tbl" />
+          <NavigationProperty Name="Warehouse_sup_tbl" Relationship="BPCRMModel.FK__Warehouse__wareh__68487DD7" FromRole="Order_table" ToRole="Warehouse_sup_tbl" />
+        </EntityType>
+        <Association Name="FK__Order_tab__order__59FA5E80">
+          <End Type="BPCRMModel.Request_tbl" Role="Request_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Order_table" Role="Order_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request_tbl">
+              <PropertyRef Name="request_id" />
+            </Principal>
+            <Dependent Role="Order_table">
+              <PropertyRef Name="order_FK_request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_tab__order__5BE2A6F2">
+          <End Type="BPCRMModel.Branches_tbl" Role="Branches_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Order_table" Role="Order_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Order_table">
+              <PropertyRef Name="order_FK_branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_tab__order__5CD6CB2B">
+          <End Type="BPCRMModel.Employee_tbl" Role="Employee_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Order_table" Role="Order_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Order_table">
+              <PropertyRef Name="order_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Order_status_tbl">
+          <Key>
+            <PropertyRef Name="order_status_id" />
+          </Key>
+          <Property Name="order_status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_status_FK_Status" Type="Int32" />
+          <Property Name="order_status_FK_Supplier" Type="Int32" />
+          <Property Name="order_status_FK_Order" Type="Int32" />
+          <NavigationProperty Name="Status_tbl" Relationship="BPCRMModel.FK__Order_sta__order__5FB337D6" FromRole="Order_status_tbl" ToRole="Status_tbl" />
+          <NavigationProperty Name="Suppliers_tbl" Relationship="BPCRMModel.FK__Order_sta__order__60A75C0F" FromRole="Order_status_tbl" ToRole="Suppliers_tbl" />
+          <NavigationProperty Name="Order_table" Relationship="BPCRMModel.FK__Order_sta__order__619B8048" FromRole="Order_status_tbl" ToRole="Order_table" />
+          <NavigationProperty Name="Warehouse_sup_tbl" Relationship="BPCRMModel.FK__Warehouse__wareh__6754599E" FromRole="Order_status_tbl" ToRole="Warehouse_sup_tbl" />
+          <Property Name="order_status_name" Type="Int32" />
+          <NavigationProperty Name="Employee_tbl" Relationship="BPCRMModel.FK__Order_sta__order__6A30C649" FromRole="Order_status_tbl" ToRole="Employee_tbl" />
+          <Property Name="order_status_request" Type="Int32" />
+          <NavigationProperty Name="Request_tbl" Relationship="BPCRMModel.FK__Order_sta__order__6B24EA82" FromRole="Order_status_tbl" ToRole="Request_tbl" />
+          <Property Name="order_status_branch" Type="Int32" />
+          <NavigationProperty Name="Branches_tbl" Relationship="BPCRMModel.FK__Order_sta__order__6C190EBB" FromRole="Order_status_tbl" ToRole="Branches_tbl" />
+        </EntityType>
+        <Association Name="FK__Order_sta__order__5FB337D6">
+          <End Type="BPCRMModel.Status_tbl" Role="Status_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Order_status_tbl" Role="Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status_tbl">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_FK_Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__60A75C0F">
+          <End Type="BPCRMModel.Suppliers_tbl" Role="Suppliers_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Order_status_tbl" Role="Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers_tbl">
+              <PropertyRef Name="supplier_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_FK_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__619B8048">
+          <End Type="BPCRMModel.Order_table" Role="Order_table" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Order_status_tbl" Role="Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_table">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_FK_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Warehouse_status_tbl">
+          <Key>
+            <PropertyRef Name="Warehouse_status_id" />
+          </Key>
+          <Property Name="Warehouse_status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Warehouse_status_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Warehouse_sup_tbl" Relationship="BPCRMModel.FK__Warehouse__wareh__66603565" FromRole="Warehouse_status_tbl" ToRole="Warehouse_sup_tbl" />
+        </EntityType>
+        <EntityType Name="Warehouse_sup_tbl">
+          <Key>
+            <PropertyRef Name="warehouse_sup_id" />
+          </Key>
+          <Property Name="warehouse_sup_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="warehouse_FK_status" Type="Int32" />
+          <Property Name="warehouse_FK_order_status" Type="Int32" />
+          <Property Name="warehouse_FK_order" Type="Int32" />
+          <Property Name="warehouse_FK_emp" Type="Int32" />
+          <NavigationProperty Name="Employee_tbl" Relationship="BPCRMModel.FK__Warehouse__wareh__693CA210" FromRole="Warehouse_sup_tbl" ToRole="Employee_tbl" />
+          <NavigationProperty Name="Order_status_tbl" Relationship="BPCRMModel.FK__Warehouse__wareh__6754599E" FromRole="Warehouse_sup_tbl" ToRole="Order_status_tbl" />
+          <NavigationProperty Name="Order_table" Relationship="BPCRMModel.FK__Warehouse__wareh__68487DD7" FromRole="Warehouse_sup_tbl" ToRole="Order_table" />
+          <NavigationProperty Name="Warehouse_status_tbl" Relationship="BPCRMModel.FK__Warehouse__wareh__66603565" FromRole="Warehouse_sup_tbl" ToRole="Warehouse_status_tbl" />
+        </EntityType>
+        <Association Name="FK__Warehouse__wareh__693CA210">
+          <End Type="BPCRMModel.Employee_tbl" Role="Employee_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Warehouse_sup_tbl" Role="Warehouse_sup_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Warehouse_sup_tbl">
+              <PropertyRef Name="warehouse_FK_emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__wareh__6754599E">
+          <End Type="BPCRMModel.Order_status_tbl" Role="Order_status_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Warehouse_sup_tbl" Role="Warehouse_sup_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_status_tbl">
+              <PropertyRef Name="order_status_id" />
+            </Principal>
+            <Dependent Role="Warehouse_sup_tbl">
+              <PropertyRef Name="warehouse_FK_order_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__wareh__68487DD7">
+          <End Type="BPCRMModel.Order_table" Role="Order_table" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Warehouse_sup_tbl" Role="Warehouse_sup_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_table">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Warehouse_sup_tbl">
+              <PropertyRef Name="warehouse_FK_order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__wareh__66603565">
+          <End Type="BPCRMModel.Warehouse_status_tbl" Role="Warehouse_status_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Warehouse_sup_tbl" Role="Warehouse_sup_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse_status_tbl">
+              <PropertyRef Name="Warehouse_status_id" />
+            </Principal>
+            <Dependent Role="Warehouse_sup_tbl">
+              <PropertyRef Name="warehouse_FK_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__6A30C649">
+          <End Type="BPCRMModel.Employee_tbl" Role="Employee_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Order_status_tbl" Role="Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee_tbl">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__6B24EA82">
+          <End Type="BPCRMModel.Request_tbl" Role="Request_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Order_status_tbl" Role="Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request_tbl">
+              <PropertyRef Name="request_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_sta__order__6C190EBB">
+          <End Type="BPCRMModel.Branches_tbl" Role="Branches_tbl" Multiplicity="0..1" />
+          <End Type="BPCRMModel.Order_status_tbl" Role="Order_status_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branches_tbl">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Order_status_tbl">
+              <PropertyRef Name="order_status_branch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище BPCRMModelContainer" CdmEntityContainer="BPCRMEntities">
+          <EntitySetMapping Name="Admin_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Admin_tbl">
+              <MappingFragment StoreEntitySet="Admin_tbl">
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="admin_login" ColumnName="admin_login" />
+                <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Employee_tbl">
+              <MappingFragment StoreEntitySet="Employee_tbl">
+                <ScalarProperty Name="position_FK_emp" ColumnName="position_FK_emp" />
+                <ScalarProperty Name="branch_FK_emp" ColumnName="branch_FK_emp" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="employee_login" ColumnName="employee_login" />
+                <ScalarProperty Name="employee_password" ColumnName="employee_password" />
+                <ScalarProperty Name="employee_fullname" ColumnName="employee_fullname" />
+                <ScalarProperty Name="employee_birthday" ColumnName="employee_birthday" />
+                <ScalarProperty Name="employee_phnumber" ColumnName="employee_phnumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Suppliers_tbl">
+              <MappingFragment StoreEntitySet="Suppliers_tbl">
+                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+                <ScalarProperty Name="supplier_login" ColumnName="supplier_login" />
+                <ScalarProperty Name="supplier_password" ColumnName="supplier_password" />
+                <ScalarProperty Name="supplier_fullname" ColumnName="supplier_fullname" />
+                <ScalarProperty Name="supplier_companyname" ColumnName="supplier_companyname" />
+                <ScalarProperty Name="supplier_address" ColumnName="supplier_address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Branches_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Branches_tbl">
+              <MappingFragment StoreEntitySet="Branches_tbl">
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inquery_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Inquery_tbl">
+              <MappingFragment StoreEntitySet="Inquery_tbl">
+                <ScalarProperty Name="inquery_FK_status" ColumnName="inquery_FK_status" />
+                <ScalarProperty Name="inquery_FK_branch" ColumnName="inquery_FK_branch" />
+                <ScalarProperty Name="inquery_description" ColumnName="inquery_description" />
+                <ScalarProperty Name="inquery_FK_head" ColumnName="inquery_FK_head" />
+                <ScalarProperty Name="inquery_deadline" ColumnName="inquery_deadline" />
+                <ScalarProperty Name="inquery_quantity" ColumnName="inquery_quantity" />
+                <ScalarProperty Name="inquery_technical_character" ColumnName="inquery_technical_character" />
+                <ScalarProperty Name="inquery_material" ColumnName="inquery_material" />
+                <ScalarProperty Name="inquery_date" ColumnName="inquery_date" />
+                <ScalarProperty Name="inquery_FK_emp" ColumnName="inquery_FK_emp" />
+                <ScalarProperty Name="inquery_id" ColumnName="inquery_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Position_tbl">
+              <MappingFragment StoreEntitySet="Position_tbl">
+                <ScalarProperty Name="position_name" ColumnName="position_name" />
+                <ScalarProperty Name="position_id" ColumnName="position_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Status_tbl">
+              <MappingFragment StoreEntitySet="Status_tbl">
+                <ScalarProperty Name="status_name" ColumnName="status_name" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inquery_status_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Inquery_status_tbl">
+              <MappingFragment StoreEntitySet="Inquery_status_tbl">
+                <ScalarProperty Name="inquery_status_FK_Branch" ColumnName="inquery_status_FK_Branch" />
+                <ScalarProperty Name="inquery_status_FK_Emp" ColumnName="inquery_status_FK_Emp" />
+                <ScalarProperty Name="inquery_status_FK_Status" ColumnName="inquery_status_FK_Status" />
+                <ScalarProperty Name="inquery_status_FK_Inquery" ColumnName="inquery_status_FK_Inquery" />
+                <ScalarProperty Name="inquery_status_id" ColumnName="inquery_status_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Request_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Request_tbl">
+              <MappingFragment StoreEntitySet="Request_tbl">
+                <ScalarProperty Name="request_FK_branch_send" ColumnName="request_FK_branch_send" />
+                <ScalarProperty Name="request_FK_inquery" ColumnName="request_FK_inquery" />
+                <ScalarProperty Name="request_FK_branch" ColumnName="request_FK_branch" />
+                <ScalarProperty Name="request_deadline" ColumnName="request_deadline" />
+                <ScalarProperty Name="request_date_fix" ColumnName="request_date_fix" />
+                <ScalarProperty Name="request_technical_character" ColumnName="request_technical_character" />
+                <ScalarProperty Name="request_quanitity" ColumnName="request_quanitity" />
+                <ScalarProperty Name="request_material" ColumnName="request_material" />
+                <ScalarProperty Name="request_FK_emp_head" ColumnName="request_FK_emp_head" />
+                <ScalarProperty Name="request_id" ColumnName="request_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_table">
+            <EntityTypeMapping TypeName="BPCRMModel.Order_table">
+              <MappingFragment StoreEntitySet="Order_table">
+                <ScalarProperty Name="order_position" ColumnName="order_position" />
+                <ScalarProperty Name="date_fix_order" ColumnName="date_fix_order" />
+                <ScalarProperty Name="order_send_emp" ColumnName="order_send_emp" />
+                <ScalarProperty Name="order_FK_emp" ColumnName="order_FK_emp" />
+                <ScalarProperty Name="order_FK_branch" ColumnName="order_FK_branch" />
+                <ScalarProperty Name="order_FK_request" ColumnName="order_FK_request" />
+                <ScalarProperty Name="order_terms" ColumnName="order_terms" />
+                <ScalarProperty Name="order_group" ColumnName="order_group" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_status_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Order_status_tbl">
+              <MappingFragment StoreEntitySet="Order_status_tbl">
+                <ScalarProperty Name="order_status_branch" ColumnName="order_status_branch" />
+                <ScalarProperty Name="order_status_request" ColumnName="order_status_request" />
+                <ScalarProperty Name="order_status_name" ColumnName="order_status_name" />
+                <ScalarProperty Name="order_status_FK_Order" ColumnName="order_status_FK_Order" />
+                <ScalarProperty Name="order_status_FK_Supplier" ColumnName="order_status_FK_Supplier" />
+                <ScalarProperty Name="order_status_FK_Status" ColumnName="order_status_FK_Status" />
+                <ScalarProperty Name="order_status_id" ColumnName="order_status_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Warehouse_status_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Warehouse_status_tbl">
+              <MappingFragment StoreEntitySet="Warehouse_status_tbl">
+                <ScalarProperty Name="Warehouse_status_name" ColumnName="Warehouse_status_name" />
+                <ScalarProperty Name="Warehouse_status_id" ColumnName="Warehouse_status_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Warehouse_sup_tbl">
+            <EntityTypeMapping TypeName="BPCRMModel.Warehouse_sup_tbl">
+              <MappingFragment StoreEntitySet="Warehouse_sup_tbl">
+                <ScalarProperty Name="warehouse_FK_emp" ColumnName="warehouse_FK_emp" />
+                <ScalarProperty Name="warehouse_FK_order" ColumnName="warehouse_FK_order" />
+                <ScalarProperty Name="warehouse_FK_order_status" ColumnName="warehouse_FK_order_status" />
+                <ScalarProperty Name="warehouse_FK_status" ColumnName="warehouse_FK_status" />
+                <ScalarProperty Name="warehouse_sup_id" ColumnName="warehouse_sup_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

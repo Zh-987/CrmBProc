@@ -1,0 +1,97 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CrmBProc.Models.Inquery_tbl>
+
+@{
+    ViewBag.Title = "Мои запросы";
+    Layout = "~/Views/Shared/_Layout_employee.cshtml";
+}
+
+<h2 class="text-center">@ViewBag.Title </h2>
+
+<table class="table" style="color: #151948; margin-top:4%">
+    <tr>
+        <th>
+            Дата формирования запроса
+        </th>
+        <th>
+            Материал
+        </th>
+        <th>
+            Техническая характеристика
+        </th>
+        <th>
+            Количество
+        </th>
+        <th>
+            Дедлайн
+        </th>
+        <th>
+            Описание
+        </th>
+        <th>
+            От кого
+        </th>
+        <th>
+            Кому
+        </th>
+        <th>
+            Департамент
+        </th>
+        <th>
+            Статус
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.inquery_date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.inquery_material)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.inquery_technical_character)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.inquery_quantity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.inquery_deadline)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.inquery_description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employee_tbl.employee_fullname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employee_tbl1.employee_fullname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Branches_tbl.branch_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status_tbl.status_name)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.inquery_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.inquery_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.inquery_id })
+        @Html.ActionLink("Скачать документ", "employee_tab_inquery_list_sheet", new { id = item.inquery_id })
+    </td>
+</tr>
+    }
+
+</table>
+
+<div id="container" style="margin-left: 20px; color: #151948">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left:400px">
+        Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        / @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("employee_tab_inquery_list", new { page }))
+    </div>
+</div>

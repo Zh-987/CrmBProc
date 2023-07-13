@@ -1,0 +1,83 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CrmBProc.Models.Inquery_status_tbl>
+
+@{
+    ViewBag.Title = "Принятые запросы";
+    Layout = "~/Views/Shared/_Layout_employee_head.cshtml";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+
+<table class="table" style="color: #151948; margin-top:4%">
+    <tr>
+        <th>
+            Ф.И.О. cотрудника
+        </th>
+
+        <th>
+            Запрос ID
+        </th>
+
+        <th>
+            Материал
+        </th>
+        <th>
+            Количество
+        </th>
+        <th>
+            Техническая харакетристика
+        </th>
+        <th>
+            Описание
+        </th>
+        
+        <th>
+           
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employee_tbl.employee_fullname)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Inquery_tbl.inquery_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Inquery_tbl.inquery_material)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Inquery_tbl.inquery_quantity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Inquery_tbl.inquery_technical_character)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Inquery_tbl.inquery_description)
+    </td>
+
+    <td>
+        @Html.ActionLink("Сформулировать заявку", "employee_head_tab_send_request", new { id = item.inquery_status_id} , new {@class = "btn btn-apple" })
+    </td>
+    <td>
+    </td>
+</tr>
+    }
+
+</table>
+
+
+<div id="container" style="margin-left: 20px; color: #151948">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left:400px">
+        Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        / @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("employee_head_tab_accepted_inquiry", new { page }))
+    </div>
+</div>

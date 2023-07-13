@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Сотрудник";
+    Layout = "~/Views/Shared/_Layout_employee.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">Добро пожаловать - @Session["employee_fullname"] !</h2>
+
+
+<section id="services" class="section">
+    <div class="container">
+
+        <div class="row">
+            <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-control-panel"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Запрос", "employee_tab_inquiry_menu", "Home")</h4>
+                </div>
+            </div>
+            <!-- End Col -->
+
+            <!-- Start Col -->
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-envelope"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Комментарии", "#", "Home")</h4>
+
+                </div>
+            </div>
+            <!-- End Col -->
+
+
+        </div>
+    </div>
+</section>

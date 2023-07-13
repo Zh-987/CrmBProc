@@ -1,0 +1,43 @@
+﻿@model CrmBProc.Models.Inquery_tbl
+
+@{
+    ViewBag.Title = "Запрос";
+    Layout = null;
+}
+
+
+<h3>Документ №  @Session["inquiry_id"]</h3>
+<h2 class="text-center" style="text-align:center">@ViewBag.Title </h2>
+
+<div class="text-center" style="margin-top: 6%; color: #151948; font-size:16px">
+
+    <p><b>Ф.И.О сотрудника:</b> @Session["inquiry_FK_emp"] <p>
+
+
+    <p><b>Дата сформирования запроса: </b>@Session["inquiry_date"] </p>
+
+
+    <p><b>Материал:</b> @Session["inquiry_material"]</p>
+
+
+
+
+    <p><b>Техническая характеристика:</b> @Session["inquiry_technical_character"]</p>
+
+
+
+    <p><b>Количество:</b> @Session["inquiry_quantity"]</p>
+
+    <p><b>Дедлайн: </b>@Session["inquiry_deadline"] </p>
+
+
+    <p><b>Адресуется:</b> @Session["inquiry_FK_head"]</p>
+
+    <p><b>Описание:</b> @Session["inquiry_description"]</p>
+
+    <p><b>Департамент:</b> @Session["inquiry_FK_branch"]</p>
+</div>
+<br>
+<h4>Подпись сотрудника @Session["inquiry_FK_emp"] департамента @Session["inquiry_FK_branch"] __________</h4>
+<h4>Подпись руководителя @Session["inquiry_FK_head"] департамента @Session["inquiry_FK_branch"] __________</h4>
+<h4>Дата "___" "______" 2021 год. Город Алматы. ТОО"Эффективные бизнес решении".</h4>

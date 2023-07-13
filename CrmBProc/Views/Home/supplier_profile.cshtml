@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Профиль поставщика";
+    Layout = "~/Views/Shared/_Layout_supplier.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">@ViewBag.Title</h2>
+
+<div class="text-center" style="margin-top: 6%; color: #151948; font-size:16px">
+    <dl class="dl-horizontal">
+        <dt style="text-align:left">Ф.И.О. поставщика:</dt>
+        <dd>@Session["supplier_fullname"]</dd>
+        <br />
+      
+     
+        <dt style="text-align: left">Логин поставщика:</dt>
+        <dd>@Session["supplier_login"]</dd>
+        <br />
+
+        <dt style=" text-align: left ">Компания:</dt>
+        <dd>@Session["supplier_company"]</dd>
+        <br />
+        <dt style=" text-align: left ">Адрес:</dt>
+        <dd> @Session["supplier_address"]</dd>
+
+        <br />
+
+
+
+    </dl>
+</div>

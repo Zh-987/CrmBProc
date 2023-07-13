@@ -1,0 +1,91 @@
+﻿@model CrmBProc.Models.Inquery_tbl
+@{
+    ViewBag.Title = "Сотрудник";
+    Layout = "~/Views/Shared/_Layout_employee_head.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">Формирование запроса</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-lg-3">
+    </div>
+    <div class="form-horizontal col-lg-9" style="color: #151948;">
+
+        <br />
+        <br />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.inquery_FK_emp, "От кого", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("inquery_FK_emp", ViewBag.List_name as SelectList, "--выбрать--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.inquery_FK_emp, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.inquery_material, "Материал", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.inquery_material, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.inquery_material, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.inquery_technical_character, "Техническая характеристика", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.inquery_technical_character, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.inquery_technical_character, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.inquery_quantity, "Количество", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.inquery_quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.inquery_quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.inquery_deadline, "Дедлайн", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.inquery_deadline, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(model => model.inquery_deadline, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.inquery_FK_head, "Кому адресуется", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("inquery_FK_head", ViewBag.List as SelectList, "--выбрать--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.inquery_FK_head, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.inquery_description, "Описание", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.inquery_description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.inquery_description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="формировать" class="btn btn-apple" />
+            </div>
+        </div>
+    </div>
+}
+
+<p style="color:red">@ViewBag.msg</p>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

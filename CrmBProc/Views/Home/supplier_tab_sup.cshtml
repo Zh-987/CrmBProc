@@ -1,0 +1,61 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CrmBProc.Models.Order_status_tbl>
+@{
+    ViewBag.Title = "Поставка";
+    Layout = "~/Views/Shared/_Layout_supplier.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <tr>
+
+        
+        <th>
+            Статус
+        </th>
+        <th>
+            Логин поставщика
+        </th>
+
+        <th>
+            Заказ ID
+        </th>
+
+        <th>
+            Условие доставки
+        </th>
+        <th>Доставлено</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status_tbl.status_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suppliers_tbl.supplier_login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_table.order_id)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_table.order_terms)
+            </td>
+            <td>
+                
+                @Html.ActionLink("Принять", "supplier_order_sup_confirm", new { id = item.order_status_id}, new { @class = "btn btn-apple", @style = "font-size:10px" })
+            </td>
+        </tr>
+    }
+
+</table>
+<div id="container" style="margin-left: 20px; color: #151948">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left:400px">
+        Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        / @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("supplier_tab_sup", new { page }))
+    </div>
+</div>

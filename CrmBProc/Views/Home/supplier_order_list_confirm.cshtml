@@ -1,0 +1,74 @@
+﻿@model CrmBProc.Models.Order_table
+
+@{
+    ViewBag.Title = "Заказ";
+    Layout = "~/Views/Shared/_Layout_supplier.cshtml";
+}
+
+<h2 class="text-center">@ViewBag.Title </h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="text-center" style="margin-top: 6%; color: #151948; font-size:16px">
+        <dl class="dl-horizontal">
+
+            <dt style="text-align: left"> Дата формирования заказа:</dt>
+            <dd>@Model.date_fix_order</dd>
+            <br>
+
+            <dt style=" text-align: left "> Заявка ID:</dt>
+            <dd>@Model.Request_tbl.request_id</dd>
+            <br />
+            <dt style=" text-align: left "> Материал:</dt>
+            <dd>@Model.Request_tbl.request_material</dd>
+
+            <br />
+            <dt style=" text-align: left ">  Техническая характеристика:</dt>
+            <dd>@Model.Request_tbl.request_technical_character</dd>
+
+            <br />
+
+            <dt style=" text-align: left ">Количество:</dt>
+            <dd>@Model.Request_tbl.request_quanitity</dd>
+            <br />
+            <dt style=" text-align: left ">Дедлайн:</dt>
+            <dd>@Model.Request_tbl.request_deadline</dd>
+
+            <br />
+
+            <dt style=" text-align: left ">  Составил заявку руководитель:</dt>
+            <dd>@Model.Employee_tbl.employee_fullname</dd>
+            <br />
+            <dt style=" text-align: left ">Из департамента:</dt>
+            <dd>@Model.Branches_tbl.branch_name</dd>
+            <br />
+            <dt style=" text-align: left ">Составил заказ:</dt>
+            <dd>@Model.order_send_emp</dd>
+            <br />
+            <dt style=" text-align: left ">Должность:</dt>
+            <dd>@Model.order_position</dd>
+            <br />
+            <dt style=" text-align: left ">Группа:</dt>
+            <dd>@Model.order_group</dd>   
+            <br />
+            <dt style=" text-align: left ">Условия доставки:</dt>
+            <dd>@Model.order_terms</dd>   <br />
+            
+
+        </dl>
+    </div>
+    <div class="form-group text-center" style="margin-top:5%">
+        <input type="submit" name="answer" value="Принять" class="btn btn-success" style="font-size:10px" />
+        <input type="submit" name="answer" value="Документ" class="btn btn-info" style="font-size:10px" />
+    </div>
+
+}
+<div style="margin-top:7%">
+    @Html.ActionLink("Назад к списку", "supplier_tab")
+</div>

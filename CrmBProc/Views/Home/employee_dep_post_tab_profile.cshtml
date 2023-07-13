@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Профиль сотрудника";
+    Layout = "~/Views/Shared/_Layout_employee_dep_post.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">@ViewBag.Title</h2>
+
+<div class="text-center" style="margin-top: 6%; color: #151948; font-size:16px">
+    <dl class="dl-horizontal">
+        <dt style="text-align:left">Ф.И.О. сотрудника:</dt>
+        <dd>@Session["employee_fullname"]</dd>
+        <br />
+        <dt style=" text-align: left ">Отдел:</dt>
+        <dd>@Session["employee_branch"]</dd>
+        <br />
+        <dt style=" text-align: left ">Должность:</dt>
+        <dd>@Session["employee_position"]</dd>
+        <br />
+
+        <dt style="text-align: left">Логин сотрудника:</dt>
+        <dd>@Session["employee_login"]</dd>
+        <br />
+
+        <dt style=" text-align: left ">День рождения:</dt>
+        <dd>@Session["employee_birthday"]</dd>
+        <br />
+        <dt style=" text-align: left ">Сотовый номер:</dt>
+        <dd>@Session["employee_phnumber"]</dd>
+
+        <br />
+
+
+
+    </dl>
+</div>

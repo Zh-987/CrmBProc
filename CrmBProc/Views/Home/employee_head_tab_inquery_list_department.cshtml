@@ -1,0 +1,87 @@
+﻿@model CrmBProc.Models.Inquery_tbl
+
+@{
+    ViewBag.Title = "Руководитель";
+    Layout = "~/Views/Shared/_Layout_employee_head.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">Поступившие запросы от сотрудников департамента</h2>
+
+
+<div class="col-lg-12" style="overflow: scroll; color: #151948; margin-bottom:5%">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    Дата формирования запроса
+                </th>
+                <th>
+                    Материал
+                </th>
+                <th>
+                    Техническая характеристика
+                </th>
+                <th>
+                    Количество
+                </th>
+                <th>
+                    Дедлайн
+                </th>
+                <th>
+                    Описание
+                </th>
+                <th>
+                    От кого
+                </th>
+                <th>
+                    Кому
+                </th>
+                <th>
+                    Департамент
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+      
+            <tbody>
+
+                @foreach (var item in ViewData["list"] as List<CrmBProc.Models.Inquery_tbl>)
+                {
+                    <tr> 
+                       <td>@item.inquery_date</td>
+                        <td>@item.inquery_material </td>
+                        <td>@item.inquery_technical_character </td>
+                        <td>@item.inquery_quantity </td>
+                        <td>@item.inquery_deadline </td>
+                        <td>@item.inquery_description </td>
+                        <td>@item.Employee_tbl.employee_fullname </td>
+                        <td>@item.Employee_tbl1.employee_fullname</td>
+                        <td>@item.Branches_tbl.branch_name</td>
+                        <td>
+                            @Html.ActionLink("Вынести решение", "employee_head_inquiry_permission", new { id = item.inquery_id }, new { @class = "btn btn-apple", style="font-size:10px" }) 
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+         
+    </table>
+
+</div>
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+

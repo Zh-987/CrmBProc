@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Администратор";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:6%">Сотрудники</h2>
+
+<section id="services" class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Start Col -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-user"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Зарегестрировать нового сотрудника", "admin_tab_employee_regist", "Home")</h4>
+
+                </div>
+            </div>
+            <!-- End Col -->
+            <!-- Start Col -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-users"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Данные о сотрудниках", "admin_tab_employee_list", "Home")</h4>
+
+                </div>
+            </div>
+            <!-- End Col -->
+            <!-- Start Col -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-control-panel"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Запросы", "admin_tab_employee_inquiry_list", "Home")</h4>
+
+                </div>
+            </div>
+            <!-- End Col -->
+
+
+
+
+        </div>
+
+        <div class="row" style="margin-top:3%">
+            <!-- Start Col -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-apartment"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Департаменты", "admin_tab_branch", "Home")</h4>
+                </div>
+            </div>
+            <!-- End Col -->
+            <!-- Start Col -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-briefcase"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Новая позиция", "admin_tab_new_position", "Home")</h4>
+                </div>
+            </div>
+            <!-- End Col -->
+            <!-- Start Col -->
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="services-item text-center">
+                    <div class="icon">
+                        <i class="lni lni-package"></i>
+                    </div>
+                    <h4 style="color:#151948">@Html.ActionLink("Заявки", "admin_tab_new_position", "Home")</h4>
+                </div>
+            </div>
+            <!-- End Col -->
+        </div>
+        </div>
+</section>
+

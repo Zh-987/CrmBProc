@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище BPCRMModelContainer" CdmEntityContainer="BPCRMEntities">
+    <EntitySetMapping Name="Admin_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Admin_tbl">
+        <MappingFragment StoreEntitySet="Admin_tbl">
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+          <ScalarProperty Name="admin_login" ColumnName="admin_login" />
+          <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Employee_tbl">
+        <MappingFragment StoreEntitySet="Employee_tbl">
+          <ScalarProperty Name="position_FK_emp" ColumnName="position_FK_emp" />
+          <ScalarProperty Name="branch_FK_emp" ColumnName="branch_FK_emp" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="employee_login" ColumnName="employee_login" />
+          <ScalarProperty Name="employee_password" ColumnName="employee_password" />
+          <ScalarProperty Name="employee_fullname" ColumnName="employee_fullname" />
+          <ScalarProperty Name="employee_birthday" ColumnName="employee_birthday" />
+          <ScalarProperty Name="employee_phnumber" ColumnName="employee_phnumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Suppliers_tbl">
+        <MappingFragment StoreEntitySet="Suppliers_tbl">
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="supplier_login" ColumnName="supplier_login" />
+          <ScalarProperty Name="supplier_password" ColumnName="supplier_password" />
+          <ScalarProperty Name="supplier_fullname" ColumnName="supplier_fullname" />
+          <ScalarProperty Name="supplier_companyname" ColumnName="supplier_companyname" />
+          <ScalarProperty Name="supplier_address" ColumnName="supplier_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Branches_tbl">
+        <MappingFragment StoreEntitySet="Branches_tbl">
+          <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inquery_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Inquery_tbl">
+        <MappingFragment StoreEntitySet="Inquery_tbl">
+          <ScalarProperty Name="inquery_FK_status" ColumnName="inquery_FK_status" />
+          <ScalarProperty Name="inquery_FK_branch" ColumnName="inquery_FK_branch" />
+          <ScalarProperty Name="inquery_description" ColumnName="inquery_description" />
+          <ScalarProperty Name="inquery_FK_head" ColumnName="inquery_FK_head" />
+          <ScalarProperty Name="inquery_deadline" ColumnName="inquery_deadline" />
+          <ScalarProperty Name="inquery_quantity" ColumnName="inquery_quantity" />
+          <ScalarProperty Name="inquery_technical_character" ColumnName="inquery_technical_character" />
+          <ScalarProperty Name="inquery_material" ColumnName="inquery_material" />
+          <ScalarProperty Name="inquery_date" ColumnName="inquery_date" />
+          <ScalarProperty Name="inquery_FK_emp" ColumnName="inquery_FK_emp" />
+          <ScalarProperty Name="inquery_id" ColumnName="inquery_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Position_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Position_tbl">
+        <MappingFragment StoreEntitySet="Position_tbl">
+          <ScalarProperty Name="position_name" ColumnName="position_name" />
+          <ScalarProperty Name="position_id" ColumnName="position_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Status_tbl">
+        <MappingFragment StoreEntitySet="Status_tbl">
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inquery_status_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Inquery_status_tbl">
+        <MappingFragment StoreEntitySet="Inquery_status_tbl">
+          <ScalarProperty Name="inquery_status_FK_Branch" ColumnName="inquery_status_FK_Branch" />
+          <ScalarProperty Name="inquery_status_FK_Emp" ColumnName="inquery_status_FK_Emp" />
+          <ScalarProperty Name="inquery_status_FK_Status" ColumnName="inquery_status_FK_Status" />
+          <ScalarProperty Name="inquery_status_FK_Inquery" ColumnName="inquery_status_FK_Inquery" />
+          <ScalarProperty Name="inquery_status_id" ColumnName="inquery_status_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Request_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Request_tbl">
+        <MappingFragment StoreEntitySet="Request_tbl">
+          <ScalarProperty Name="request_FK_branch_send" ColumnName="request_FK_branch_send" />
+          <ScalarProperty Name="request_FK_inquery" ColumnName="request_FK_inquery" />
+          <ScalarProperty Name="request_FK_branch" ColumnName="request_FK_branch" />
+          <ScalarProperty Name="request_deadline" ColumnName="request_deadline" />
+          <ScalarProperty Name="request_date_fix" ColumnName="request_date_fix" />
+          <ScalarProperty Name="request_technical_character" ColumnName="request_technical_character" />
+          <ScalarProperty Name="request_quanitity" ColumnName="request_quanitity" />
+          <ScalarProperty Name="request_material" ColumnName="request_material" />
+          <ScalarProperty Name="request_FK_emp_head" ColumnName="request_FK_emp_head" />
+          <ScalarProperty Name="request_id" ColumnName="request_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_table">
+      <EntityTypeMapping TypeName="BPCRMModel.Order_table">
+        <MappingFragment StoreEntitySet="Order_table">
+          <ScalarProperty Name="order_position" ColumnName="order_position" />
+          <ScalarProperty Name="date_fix_order" ColumnName="date_fix_order" />
+          <ScalarProperty Name="order_send_emp" ColumnName="order_send_emp" />
+          <ScalarProperty Name="order_FK_emp" ColumnName="order_FK_emp" />
+          <ScalarProperty Name="order_FK_branch" ColumnName="order_FK_branch" />
+          <ScalarProperty Name="order_FK_request" ColumnName="order_FK_request" />
+          <ScalarProperty Name="order_terms" ColumnName="order_terms" />
+          <ScalarProperty Name="order_group" ColumnName="order_group" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_status_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Order_status_tbl">
+        <MappingFragment StoreEntitySet="Order_status_tbl">
+          <ScalarProperty Name="order_status_branch" ColumnName="order_status_branch" />
+          <ScalarProperty Name="order_status_request" ColumnName="order_status_request" />
+          <ScalarProperty Name="order_status_name" ColumnName="order_status_name" />
+          <ScalarProperty Name="order_status_FK_Order" ColumnName="order_status_FK_Order" />
+          <ScalarProperty Name="order_status_FK_Supplier" ColumnName="order_status_FK_Supplier" />
+          <ScalarProperty Name="order_status_FK_Status" ColumnName="order_status_FK_Status" />
+          <ScalarProperty Name="order_status_id" ColumnName="order_status_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warehouse_status_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Warehouse_status_tbl">
+        <MappingFragment StoreEntitySet="Warehouse_status_tbl">
+          <ScalarProperty Name="Warehouse_status_name" ColumnName="Warehouse_status_name" />
+          <ScalarProperty Name="Warehouse_status_id" ColumnName="Warehouse_status_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warehouse_sup_tbl">
+      <EntityTypeMapping TypeName="BPCRMModel.Warehouse_sup_tbl">
+        <MappingFragment StoreEntitySet="Warehouse_sup_tbl">
+          <ScalarProperty Name="warehouse_FK_emp" ColumnName="warehouse_FK_emp" />
+          <ScalarProperty Name="warehouse_FK_order" ColumnName="warehouse_FK_order" />
+          <ScalarProperty Name="warehouse_FK_order_status" ColumnName="warehouse_FK_order_status" />
+          <ScalarProperty Name="warehouse_FK_status" ColumnName="warehouse_FK_status" />
+          <ScalarProperty Name="warehouse_sup_id" ColumnName="warehouse_sup_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

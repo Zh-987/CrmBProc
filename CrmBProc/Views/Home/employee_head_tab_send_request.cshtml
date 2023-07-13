@@ -1,0 +1,56 @@
+﻿@model CrmBProc.Models.Inquery_status_tbl
+
+@{
+    ViewBag.Title = "Заявка";
+    Layout = "~/Views/Shared/_Layout_employee_head.cshtml";
+}
+
+<h2 class="text-center">@ViewBag.Title </h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="text-center" style="margin-top: 6%; color: #151948; font-size:16px">
+        <dl class="dl-horizontal">
+
+            <dt style="text-align: left">Ф.И.О сотрудника</dt>
+            <dd>@Model.Employee_tbl.employee_fullname</dd>
+            <br>
+
+            <dt style=" text-align: left ">Материал:</dt>
+            <dd>@Model.Inquery_tbl.inquery_material</dd>
+            <br />
+            <dt style=" text-align: left ">Техническая характеристика:</dt>
+            <dd>@Model.Inquery_tbl.inquery_technical_character</dd>
+
+            <br />
+
+            <dt style=" text-align: left ">Количество:</dt>
+            <dd>@Model.Inquery_tbl.inquery_quantity</dd>
+            <br />
+            <dt style=" text-align: left ">Дедлайн:</dt>
+            <dd>@Model.Inquery_tbl.inquery_deadline</dd>
+
+            <br />
+
+            <dt style=" text-align: left ">Описание:</dt>
+            <dd>@Model.Inquery_tbl.inquery_description</dd>
+            <br />
+            <dt style=" text-align: left ">Департамент:</dt>
+            <dd>@Model.Branches_tbl.branch_name</dd>
+
+        </dl>
+    </div>
+    <div class="form-group text-center" style="margin-top:5%">
+        <input type="submit" name="answer" value="Отправить" class="btn btn-primary" style="font-size:10px" />
+    </div>
+
+}
+<div style="margin-top:7%">
+    @Html.ActionLink("Назад к списку", "employee_head_tab_accepted_inquiry")
+</div>

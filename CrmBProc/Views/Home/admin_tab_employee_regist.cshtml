@@ -1,0 +1,94 @@
+﻿@model CrmBProc.Models.Employee_tbl
+
+@{
+    ViewBag.Title = "Регистрация нового сотрудника";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:3%">@ViewBag.Title </h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-lg-3">
+    </div>
+    <div class="form-horizontal col-lg-9" style="color: #151948;">
+
+        <br />
+        <br />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.branch_FK_emp, "Департамент", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("branch_FK_emp", ViewBag.List as SelectList, "--выбрать--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.branch_FK_emp, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.employee_fullname, "Ф.И.О. сотрудника", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.employee_fullname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.employee_fullname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.position_FK_emp, "Должность", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("position_FK_emp", ViewBag.List_position as SelectList, "--выбрать--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.position_FK_emp, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.employee_login, "Логин", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.employee_login, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.employee_login, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.employee_password, "Пароль", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.employee_password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.employee_password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.employee_birthday, "День рождения", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.employee_birthday, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(model => model.employee_birthday, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.employee_phnumber, "Сотовый номер", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.employee_phnumber, new { htmlAttributes = new { @class = "form-control", @type = "tel", @pattern = "[0-8]{1}-[0-11]{3}-[0-11]{2}-[0-11]{2}", @placeholder = "8-777-77-77" } })
+                @Html.ValidationMessageFor(model => model.employee_phnumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="зарегистрировать" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<p style="color:red">@ViewBag.msg</p>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<div>
+    @Html.ActionLink("Назад", "admin_tab_employee")
+</div>
+
